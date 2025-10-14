@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public abstract class GUIHandler {
+
+	private static Animal currentAnimal;
 
 	public static void startUp() {
 
@@ -119,5 +123,63 @@ public abstract class GUIHandler {
 
 		frame.add(totalPane, BorderLayout.CENTER);
 		frame.setVisible(true);
+
+
+		//animal buttons
+		bearButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Bear();
+			}	
+		});
+
+		//action buttons
+		eatButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					currentAnimal.performEat();
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
+
+		moveButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					currentAnimal.performMove();
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
+
+		soundButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					currentAnimal.performSound();
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
 	}
 }
