@@ -7,7 +7,7 @@ public class Pig extends Animal
             @Override
             public String move()
             {
-                return "Pig wandering...";
+                return "Pigs wandering...";
             }
         });
 
@@ -30,3 +30,4 @@ public class Pig extends Animal
         });
     }
 }    
+
