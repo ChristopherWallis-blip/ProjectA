@@ -143,7 +143,7 @@ public abstract class GUIHandler {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentAnimal = new Ant();
-				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				image.setImage(new ImageIcon("storage/fireAnt.jpg").getImage());
 				imageLabel.repaint();
 			}
 			
@@ -153,8 +153,8 @@ public abstract class GUIHandler {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				currentAnimal = new Ant();
-				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				currentAnimal = new Chicken();
+				image.setImage(new ImageIcon("storage/Chicken.jpg").getImage());
 				imageLabel.repaint();
 			}
 			
@@ -165,7 +165,7 @@ public abstract class GUIHandler {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentAnimal = new Ant();
-				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				image.setImage(new ImageIcon("storage/Cow.jpg").getImage());
 				imageLabel.repaint();
 			}
 			
@@ -175,14 +175,14 @@ public abstract class GUIHandler {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				currentAnimal = new Ant();
-				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				currentAnimal = new Duck();
+				image.setImage(new ImageIcon("storage/Duck.jpg").getImage());
 				imageLabel.repaint();
 			}
 			
 		});
 
-		
+
 		//action buttons
 		eatButton.addActionListener(new ActionListener() {
 
