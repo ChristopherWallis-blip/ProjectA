@@ -1,19 +1,33 @@
 
-
-
-public class Bear extends Animal implements DietBehavior, MovementBehavior
+public class Bear extends Animal
 {
+    public Bear()
+    {
+        setMovementBehavior(new MovementBehavior() {
 
-    @Override
-    public void move() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'move'");
-    }
+            @Override
+            public String move() {
+                return "Bear walking...";
+            }
+            
+        });
 
-    @Override
-    public void eat() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eat'");
-    }
+        setDietBehavior(new DietBehavior() {
+
+            @Override
+            public String eat() {
+                return "Bears are omnivores...\nEating salmon and berrys";
+         } 
+
+        });
+
+        setSoundBehavior(new SoundBehavior() {
+            @Override
+            public String makeSound() {
+              return "ROAR!";
+            }
+        });
+
     
+    }
 }

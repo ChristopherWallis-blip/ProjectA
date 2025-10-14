@@ -15,12 +15,12 @@ abstract class Animal {
     public void setDietBehavior(DietBehavior dietBehavior) {
         this.dietBehavior = dietBehavior;}
 
-    public void performMove() {
-        this.movementBehavior.move();}
+    public String performMove() {
+        return this.movementBehavior.move();}
 
-    public void performSound() {
-        this.soundBehavior.makeSound();}
+    public String performSound() {
+        return this.soundBehavior.makeSound();}
 
-    public void performEat() {
-        this.dietBehavior.eat();}
+    public String performEat() {
+        return this.dietBehavior.eat();}
  }

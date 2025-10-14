@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public abstract class GUIHandler {
 
 	private static Animal currentAnimal;
+	private static ImageIcon image;
 
 	public static void startUp() {
 
@@ -64,7 +65,7 @@ public abstract class GUIHandler {
 		leftSide.setMaximumSize(new Dimension(400, 600));
 
 		JPanel imagePanel = new JPanel();
-		ImageIcon image = new ImageIcon("storage/fireAnt.jpg");
+		image = new ImageIcon("storage/pokedex.jpg");
 		JLabel imageLabel = new JLabel(image);
 		imagePanel.add(imageLabel);
 		JPanel titlePanel = new JPanel();
@@ -127,12 +128,61 @@ public abstract class GUIHandler {
 
 		//animal buttons
 		bearButton.addActionListener(new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentAnimal = new Bear();
-			}	
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+			}
+			
 		});
 
+		antButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Ant();
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+			}
+			
+		});
+
+		chickenButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Ant();
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+			}
+			
+		});
+
+		cowButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Ant();
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+			}
+			
+		});
+
+		duckButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Ant();
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+			}
+			
+		});
+
+		
 		//action buttons
 		eatButton.addActionListener(new ActionListener() {
 
@@ -140,7 +190,9 @@ public abstract class GUIHandler {
 			public void actionPerformed(ActionEvent e) {
 				if(currentAnimal != null)
 				{
-					currentAnimal.performEat();
+					String text = currentAnimal.performEat();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
 				}
 				else
 				{
@@ -156,7 +208,9 @@ public abstract class GUIHandler {
 			public void actionPerformed(ActionEvent e) {
 				if(currentAnimal != null)
 				{
-					currentAnimal.performMove();
+					String text = currentAnimal.performMove();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
 				}
 				else
 				{
@@ -172,7 +226,9 @@ public abstract class GUIHandler {
 			public void actionPerformed(ActionEvent e) {
 				if(currentAnimal != null)
 				{
-					currentAnimal.performSound();
+					String text = currentAnimal.performSound();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
 				}
 				else
 				{
