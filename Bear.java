@@ -7,7 +7,7 @@ public class Bear extends Animal
 
             @Override
             public String move() {
-                return "Bear walking...";
+                return "Bear running...";
             }
             
         });

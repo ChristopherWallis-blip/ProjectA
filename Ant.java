@@ -6,7 +6,7 @@ public class Ant extends Animal
 
             @Override
             public String move() {
-                return "Ant crawling...";
+                return "Ant marching...";
             }
             
         });

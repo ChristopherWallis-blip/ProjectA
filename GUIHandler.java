@@ -134,6 +134,10 @@ public abstract class GUIHandler {
 				currentAnimal = new Bear();
 				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
 				imageLabel.repaint();
+
+				moveButton.setText("Run");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Roar");
 			}
 			
 		});
@@ -145,6 +149,10 @@ public abstract class GUIHandler {
 				currentAnimal = new Ant();
 				image.setImage(new ImageIcon("storage/fireAnt.jpg").getImage());
 				imageLabel.repaint();
+
+				moveButton.setText("March");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Ant noise?");
 			}
 			
 		});
@@ -156,6 +164,10 @@ public abstract class GUIHandler {
 				currentAnimal = new Chicken();
 				image.setImage(new ImageIcon("storage/Chicken.jpg").getImage());
 				imageLabel.repaint();
+
+				moveButton.setText("Walk");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Chicken noise");
 			}
 			
 		});
@@ -164,9 +176,13 @@ public abstract class GUIHandler {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				currentAnimal = new Ant();
+				currentAnimal = new Cow();
 				image.setImage(new ImageIcon("storage/Cow.jpg").getImage());
 				imageLabel.repaint();
+
+				moveButton.setText("Walk");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Moo");
 			}
 			
 		});
@@ -178,6 +194,10 @@ public abstract class GUIHandler {
 				currentAnimal = new Duck();
 				image.setImage(new ImageIcon("storage/Duck.jpg").getImage());
 				imageLabel.repaint();
+
+				moveButton.setText("Swim");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Quack");
 			}
 			
 		});
