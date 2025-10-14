@@ -1,6 +1,6 @@
 public class Elephant extends Animal
 {
-    public Bear()
+    public Elephant()
     {
         setMovementBehavior(new MovementBehavior() 
         {
@@ -30,3 +30,4 @@ public class Elephant extends Animal
         });
     }
 }    
+
