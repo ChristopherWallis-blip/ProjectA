@@ -2,5 +2,5 @@
  * Interface for sound behaviors.
  */
 public interface SoundBehavior {
-    public abstract void makeSound();
+    public abstract String makeSound();
 } 

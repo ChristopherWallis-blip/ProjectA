@@ -1,7 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public abstract class GUIHandler {
+
+	private static Animal currentAnimal;
+	private static ImageIcon image;
 
 	public static void startUp() {
 
@@ -60,7 +65,7 @@ public abstract class GUIHandler {
 		leftSide.setMaximumSize(new Dimension(400, 600));
 
 		JPanel imagePanel = new JPanel();
-		ImageIcon image = new ImageIcon("storage/fireAnt.jpg");
+		image = new ImageIcon("storage/pokedex.jpg");
 		JLabel imageLabel = new JLabel(image);
 		imagePanel.add(imageLabel);
 		JPanel titlePanel = new JPanel();
@@ -119,5 +124,226 @@ public abstract class GUIHandler {
 
 		frame.add(totalPane, BorderLayout.CENTER);
 		frame.setVisible(true);
+
+
+		//animal buttons
+		bearButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Bear();
+				image.setImage(new ImageIcon("storage/Bear.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Run");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Roar");
+			}
+			
+		});
+
+		antButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Ant();
+				image.setImage(new ImageIcon("storage/fireAnt.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("March");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Ant noise?");
+			}
+			
+		});
+
+		chickenButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Chicken();
+				image.setImage(new ImageIcon("storage/Chicken.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Walk");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Chicken noise");
+			}
+			
+		});
+
+		cowButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Cow();
+				image.setImage(new ImageIcon("storage/Cow.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Walk");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Moo");
+			}
+			
+		});
+
+		duckButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Duck();
+				image.setImage(new ImageIcon("storage/Duck.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Swim");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Quack");
+			}
+			
+		});
+
+		elephantButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Elephant();
+				image.setImage(new ImageIcon("storage/Elephant.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Lumber");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Trumpet");
+			}
+			
+		});
+
+		gooseButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Goose();
+				image.setImage(new ImageIcon("storage/Goose.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Swim/Waddle");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Honk");
+			}
+			
+		});
+
+		lionButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Lion();
+				image.setImage(new ImageIcon("storage/Lion.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Pad");
+				eatButton.setText("Carnivore");
+				soundButton.setText("Roar");
+			}
+			
+		});
+
+		parrotButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Parrot();
+				image.setImage(new ImageIcon("storage/Parrot.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Fly");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Squawk");
+			}
+			
+		});
+
+		pigButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Pig();
+				image.setImage(new ImageIcon("storage/Pig.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Wander");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Oink");
+			}
+			
+		});
+
+		wolfButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Wolf();
+				image.setImage(new ImageIcon("storage/Wolf.jpeg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Wander");
+				eatButton.setText("Carnivore");
+				soundButton.setText("Howl");
+			}
+			
+		});
+		//action buttons
+		eatButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					String text = currentAnimal.performEat();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
+
+		moveButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					String text = currentAnimal.performMove();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
+
+		soundButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(currentAnimal != null)
+				{
+					String text = currentAnimal.performSound();
+					outputLabel.removeAll();
+					outputLabel.setText(text);
+				}
+				else
+				{
+					outputLabel.setText("Please select Animal first!");
+				}
+			}
+			
+		});
 	}
 }
