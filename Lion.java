@@ -20,7 +20,7 @@ public class Lion extends Animal
                 Random r = new Random();
                 if (r.nextInt() % 4 == 0)
                 {
-                    return "Lions are carnivores...\nEating gazelle"
+                    return "Lions are carnivores...\nEating gazelle";
                 }
                 return "Lions are carnivores...\nEating wildebeest";
             }
@@ -36,3 +36,4 @@ public class Lion extends Animal
         });
     }
 }    
+
