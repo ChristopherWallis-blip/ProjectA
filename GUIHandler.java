@@ -202,7 +202,95 @@ public abstract class GUIHandler {
 			
 		});
 
+		elephantButton.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Elephant();
+				image.setImage(new ImageIcon("storage/Elephant.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Lumber");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Trumpet");
+			}
+			
+		});
+
+		gooseButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Goose();
+				image.setImage(new ImageIcon("storage/Goose.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Swim/Waddle");
+				eatButton.setText("Herbivore");
+				soundButton.setText("Honk");
+			}
+			
+		});
+
+		lionButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Lion();
+				image.setImage(new ImageIcon("storage/Lion.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Pad");
+				eatButton.setText("Carnivore");
+				soundButton.setText("Roar");
+			}
+			
+		});
+
+		parrotButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Parrot();
+				image.setImage(new ImageIcon("storage/Parrot.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Fly");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Squawk");
+			}
+			
+		});
+
+		pigButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Pig();
+				image.setImage(new ImageIcon("storage/Pig.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Wander");
+				eatButton.setText("Omnivore");
+				soundButton.setText("Oink");
+			}
+			
+		});
+
+		wolfButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				currentAnimal = new Wolf();
+				image.setImage(new ImageIcon("storage/Wolf.jpg").getImage());
+				imageLabel.repaint();
+
+				moveButton.setText("Wander");
+				eatButton.setText("Carnivore");
+				soundButton.setText("Howl");
+			}
+			
+		});
 		//action buttons
 		eatButton.addActionListener(new ActionListener() {
 
