@@ -16,7 +16,7 @@ public class Wolf extends Animal
             @Override
             public String eat()
             {
-                return "Wolves are omnivores...\nEating rabbits";
+                return "Wolves are carnivores...\nEating rabbits";
             }
         });
 
@@ -30,3 +30,4 @@ public class Wolf extends Animal
         });
     }
 }    
+
