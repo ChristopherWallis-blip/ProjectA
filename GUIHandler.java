@@ -282,7 +282,7 @@ public abstract class GUIHandler {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				currentAnimal = new Wolf();
-				image.setImage(new ImageIcon("storage/Wolf.jpg").getImage());
+				image.setImage(new ImageIcon("storage/Wolf.jpeg").getImage());
 				imageLabel.repaint();
 
 				moveButton.setText("Wander");
